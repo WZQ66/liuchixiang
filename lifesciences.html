@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>刘吃翔的生命科学研究</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question span {
+            font-weight: bold;
+        }
+
+        .feedback {
+            color: red;
+            margin-top: 5px;
+            font-size: 0.9em;
+        }
+
+        .feedback.correct {
+            color: green;
+        }
+
+        p {
+            text-align: left; /* 段落文本左对齐 */
+            margin: 0 auto; /* 段落水平居中（需要配合宽度） */
+            width: 80%; /* 段落宽度 */
+            max-width: 600px; /* 最大宽度限制 */
+            margin-bottom: 20px; /* 段落下边距 */
+            text-indent: 2em;
+        }
+
+        /* 返回主页链接样式 */
+        a {
+            color: #0066cc; /* 蓝色链接 */
+            text-decoration: none; /* 去除下划线 */
+            font-size: 18px; /* 链接字体大小 */
+            margin-top: 20px; /* 链接上边距 */
+            display: inline-block; /* 使得margin生效 */
+            padding: 10px 20px; /* 链接内边距，增加点击区域 */
+            background-color: #fff; /* 白色背景 */
+            border: 1px solid #ddd; /* 灰色边框 */
+            border-radius: 5px; /* 边框圆角 */
+            transition: background-color 0.3s; /* 背景色过渡效果 */
+        }
+
+        /* 鼠标悬停链接样式 */
+        a:hover {
+            background-color: #0066cc; /* 蓝色背景 */
+            color: #fff; /* 白色文字 */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="index.html">返回主页</a>
+    <p>刘吃翔(?-2024)，曾任德育部主住，死后加封为中国工程院院士。被央视财经频道评为最具经济效益的人物。</p>
+    <p>刘吃翔的基因可以使人轻松跳入下水道，并对人体排遗物有强烈的进食欲望，该基因为显性基因。</p>
+    <p>科学家发现，刘吃翔基因由20世纪60年代的一次气象活动，导致初代刘吃翔的母亲的受精卵中出现了两个基因变异，这两个基因结合形成了刘吃翔的显性基因，科学家将这种染色体命名为翔染色体。发现该现象的生命科学家李红春院士获得了诺贝尔奖，并提分为中国科学院院士。</p>
+    <p>科学家将刘吃翔基因拆成两部分，并在其中加上无线电基因，形成了特殊基因，该基因被用于间谍活动。中国对美间谍所所长李继燕引入了该基因，被组织派到了CIA的下水道里从事窃听活动，取得大量情报。</p>
+    <p>有科学家考虑增大刘吃翔基因，这可以使基因植入者食量大幅增加，被广泛用于化粪池清洁；还有科学家考虑减小刘吃翔基因，这可以给基因植入者钻入更小的管道的能力，被广泛用于血管清洁和透析等临床场景。</p>
+    <p>刘吃翔基因是人类的宝库，科学家将开发出对刘吃翔基因的更多用法。</p>
+    <h1>无奖问答</h1>
+    <div class="question">
+        <span>刘吃翔如饿虎扑食般跳入下水道，这是一种</span>
+        <input type="text" id="question1" placeholder="请输入答案">
+        <span>反射</span>
+        <div id="feedback1" class="feedback"></div>
+    </div>
+    <div class="question">
+        <span>该反射的结构基础是</span>
+        <input type="text" id="question2" placeholder="请输入答案">
+        <div id="feedback2" class="feedback"></div>
+    </div>
+    <button onclick="checkAnswers()">提交</button>
+</div>
+
+<script>
+    function checkAnswers() {
+        const answers = {
+            "question1": "非条件",
+            "question2": "反射弧"
+        };
+        const feedbacks = ["feedback1", "feedback2"];
+
+        for (let i = 0; i < feedbacks.length; i++) {
+            const feedbackId = feedbacks[i];
+            const inputId = `question${i + 1}`;
+            const input = document.getElementById(inputId);
+            const feedback = document.getElementById(feedbackId);
+
+            if (input.value.trim() === answers[inputId]) {
+                feedback.classList.remove("correct");
+                feedback.textContent = "回答正确！";
+                feedback.classList.add("correct");
+            } else {
+                feedback.textContent = "回答错误，请再试一次。";
+                feedback.classList.remove("correct");
+            }
+        }
+    }
+</script>
+</body>
+</html>
